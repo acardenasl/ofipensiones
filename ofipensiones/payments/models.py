@@ -1,4 +1,6 @@
 from django.db import models
+from datetime import timedelta
+
 
 
 class Institution(models.Model):
@@ -55,6 +57,26 @@ class TermPayment(models.Model):
 
 
 class OfipensionesLog(models.Model):
+    operation_name = models.CharField(max_length=32)
+    time_taken = models.DurationField()
+    timestamp = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ["-timestamp"]
+
+    def __str__(self) -> str:
+        return f"{self.operation_name} - {self.timestamp}"
+    
+class Factura(models.Model):
+    student = models.ForeignKey(Student, on_delete=models.DO_NOTHING)
+    total_amount = models.DecimalField(max_digits=10, decimal_places=2)
+    due_date = models.DateField()
+
+    def __str__(self) -> str:
+        return f"Factura for {self.student} - Total: {self.total_amount}"
+
+    
+class OfipensionesFactura(models.Model):
     operation_name = models.CharField(max_length=32)
     time_taken = models.DurationField()
     timestamp = models.DateTimeField(auto_now=True)
