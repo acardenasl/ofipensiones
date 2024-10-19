@@ -55,8 +55,6 @@ sudo apt upgrade -y
 
 sudo -u postgres psql
 
-sudo -u postgres psql
-
 CREATE USER ofipensiones_web;
 
 CREATE DATABASE ofipensiones_andes OWNER ofipensiones_web;

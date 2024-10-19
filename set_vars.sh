@@ -7,7 +7,7 @@ export DJANGO_DB_PASSWORD=adminpasswd
 
 # other options...
 # check settings.py for defaults
-# $env:DJANGO_SECRET_KEY
-# $env:DJANGO_DEBUG
-# $env:DJANGO_ALLOWED_HOSTS
-# $env:DJANGO_STATIC_ROOT
+# export DJANGO_SECRET_KEY
+# export DJANGO_DEBUG
+# export DJANGO_ALLOWED_HOSTS
+# export DJANGO_STATIC_ROOT
