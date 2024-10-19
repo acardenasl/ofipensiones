@@ -1,14 +1,13 @@
-from locust import HttpUser, task
+from locust import HttpUser, tag, task
 
 
 class LoadPaymentReceiveService(HttpUser):
+    @tag("payments")
     @task
     def payment_receipt(self):
-        pass
+        self.client.get("/payment_receipts/")
 
+    @tag("biils")
     @task
-    def healthcheck(self):
-        """
-        DELETE ME
-        """
-        self.client.get("/facturas")
+    def bills(self):
+        self.client.get("/bills/")

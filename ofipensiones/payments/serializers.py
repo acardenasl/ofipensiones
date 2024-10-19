@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from .models import TermPayment
-from .models import Factura
+from .models import Bill
+
 
 class PaymentReceiptSerializer(serializers.ModelSerializer):
     student_info = serializers.SerializerMethodField()
@@ -28,13 +29,13 @@ class PaymentReceiptSerializer(serializers.ModelSerializer):
             "city": obj.student.school.city,
             "address": obj.student.school.address,
         }
-    
 
-class FacturaSerializer(serializers.ModelSerializer):
+
+class BillSerializer(serializers.ModelSerializer):
     student_info = serializers.SerializerMethodField()
 
     class Meta:
-        model = Factura
+        model = Bill
         fields = [
             "student_info",
             "total_amount",
