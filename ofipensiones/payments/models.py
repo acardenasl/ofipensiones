@@ -76,13 +76,4 @@ class Factura(models.Model):
         return f"Factura for {self.student} - Total: {self.total_amount}"
 
     
-class OfipensionesFactura(models.Model):
-    operation_name = models.CharField(max_length=32)
-    time_taken = models.DurationField()
-    timestamp = models.DateTimeField(auto_now=True)
 
-    class Meta:
-        ordering = ["-timestamp"]
-
-    def __str__(self) -> str:
-        return f"{self.operation_name} - {self.timestamp}"

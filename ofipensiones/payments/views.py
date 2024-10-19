@@ -1,7 +1,7 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
-from .models import OfipensionesLog, TermPayment,OfipensionesFactura
+from .models import OfipensionesLog, TermPayment
 from .serializers import PaymentReceiptSerializer, FacturaSerializer
 from .models import TermPayment, Factura
 from django.http import Http404
@@ -36,7 +36,7 @@ class FacturaList(APIView):
         e = time.time()
         
         delta = timedelta(seconds=e - s)
-        OfipensionesFactura(operation_name="facturas", time_taken=delta).save()
+        OfipensionesLog(operation_name="facturas", time_taken=delta).save()
 
         return Response(serializer.data, status=status.HTTP_200_OK)
 
@@ -49,13 +49,13 @@ class FacturaList(APIView):
             e = time.time()
             
             delta = timedelta(seconds=e - s)
-            OfipensionesFactura(operation_name="create_factura", time_taken=delta).save()
+            OfipensionesLog(operation_name="create_factura", time_taken=delta).save()
 
             return Response(serializer.data, status=status.HTTP_201_CREATED)
 
         e = time.time()
         delta = timedelta(seconds=e - s)
-        OfipensionesFactura(operation_name="create_factura_failed", time_taken=delta).save()
+        OfipensionesLog(operation_name="create_factura_failed", time_taken=delta).save()
 
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
@@ -78,7 +78,7 @@ class FacturaDetail(APIView):
         e = time.time()
 
         delta = timedelta(seconds=e - s)
-        OfipensionesFactura(operation_name="retrieve_factura", time_taken=delta).save()
+        OfipensionesLog(operation_name="retrieve_factura", time_taken=delta).save()
 
         return Response(serializer.data, status=status.HTTP_200_OK)
 
@@ -92,13 +92,13 @@ class FacturaDetail(APIView):
             e = time.time()
 
             delta = timedelta(seconds=e - s)
-            OfipensionesFactura(operation_name="update_factura", time_taken=delta).save()
+            OfipensionesLog(operation_name="update_factura", time_taken=delta).save()
 
             return Response(serializer.data, status=status.HTTP_200_OK)
 
         e = time.time()
         delta = timedelta(seconds=e - s)
-        OfipensionesFactura(operation_name="update_factura_failed", time_taken=delta).save()
+        OfipensionesLog(operation_name="update_factura_failed", time_taken=delta).save()
 
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
@@ -109,6 +109,6 @@ class FacturaDetail(APIView):
         e = time.time()
 
         delta = timedelta(seconds=e - s)
-        OfipensionesFactura(operation_name="delete_factura", time_taken=delta).save()
+        OfipensionesLog(operation_name="delete_factura", time_taken=delta).save()
 
         return Response(status=status.HTTP_204_NO_CONTENT)

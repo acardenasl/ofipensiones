@@ -11,4 +11,4 @@ class LoadPaymentReceiveService(HttpUser):
         """
         DELETE ME
         """
-        self.client.get("/healthcheck")
+        self.client.get("/facturas")
