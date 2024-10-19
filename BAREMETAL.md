@@ -82,8 +82,8 @@ override `/etc/nginx/sites-availabile/default`
 
 ```
 upstream ofipensiones {
-    server <internal_ip>:8000;
-    server <internal_ip>:8000;
+    server <internal_ip>:8080;
+    server <internal_ip>:8080;
 }
 
 server {
@@ -103,6 +103,12 @@ server {
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         proxy_set_header Host $host;
         proxy_redirect off;
+        proxy_http_version 1.1;
+        proxy_set_header Connection "";
+    }
+
+    location = /basic_status {
+        stub_status;
     }
 }
 ```

@@ -71,6 +71,12 @@ for `COMPUTE` bound tasks.
 Note that Gthread is an optimization for space, but has the restriction of
 python threading implementation `GIL`.
 
+## NGINX
+
+`location = <path> {}` vs `location <path> {}`
+
+The first is an exact match while the latter is a prefix match.
+
 ## Miembros
 
 - Andres Juan Cardenas Layton - a.cardenasl@uniandes.edu.co - 202122083
