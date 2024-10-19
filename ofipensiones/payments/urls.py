@@ -1,6 +1,9 @@
 from django.urls import path
-from .views import PaymentReceiptList
+from .views import BillDetail, PaymentReceiptList, BillList
+
 
 urlpatterns = [
-    path("payment_receipt/", PaymentReceiptList.as_view(), name="payment_receipt_list"),
+    path("payment_receipts/", PaymentReceiptList.as_view()),
+    path("bills/", BillList.as_view()),
+    path("bills/<int:pk>", BillDetail.as_view()),
 ]
