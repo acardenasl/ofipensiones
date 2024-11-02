@@ -81,6 +81,5 @@ The first is an exact match while the latter is a prefix match.
 
 - Andres Juan Cardenas Layton - a.cardenasl@uniandes.edu.co - 202122083
 - Isaac David Bermudez Lara - i.bermudezl@uniandes.edu.co - 202014146
-- SSantiago Tenjo Venegas - s.tenjov@uniandes.edu.co - 202113965
+- Santiago Tenjo Venegas - s.tenjov@uniandes.edu.co - 202113965
 - Samara Martinez Jacome -  s.martinezj@uniandes.edu.co - 202221057
-- Yesid Steven Piñeros Piñeros - y.pineros@uniandes.edu.co - 202013148
