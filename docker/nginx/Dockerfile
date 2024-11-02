@@ -14,6 +14,6 @@ RUN /app/.venv/bin/python ofipensiones/manage.py collectstatic
 
 FROM nginx:1.27
 
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+COPY nginx.conf /etc/nginx/nginx.conf
 
 COPY --from=webstatic /static/ /staticfiles

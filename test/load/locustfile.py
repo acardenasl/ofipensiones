@@ -5,9 +5,9 @@ class LoadPaymentReceiveService(HttpUser):
     @tag("payments")
     @task
     def payment_receipt(self):
-        self.client.get("/payment_receipts/")
+        self.client.get("/api/payment_receipts/")
 
-    @tag("biils")
+    @tag("bills")
     @task
     def bills(self):
-        self.client.get("/bills/")
+        self.client.get("/api/bills/")
