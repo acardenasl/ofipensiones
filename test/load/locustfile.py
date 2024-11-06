@@ -1,6 +1,6 @@
 from locust import HttpUser, task, between, tag
 
-"""
+
 # Usuario con comportamiento normal: menos de 100 peticiones por minuto
 class NormalUser(HttpUser):
     wait_time = between(0.6, 0.7)  # Aproximadamente 100 peticiones por minuto
@@ -22,3 +22,4 @@ class MaliciousUser(HttpUser):
     @task
     def malicious_behavior(self):
         self.client.get("/api/payment_receipts/")
+"""
