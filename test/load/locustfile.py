@@ -14,7 +14,7 @@ class NormalUser(HttpUser):
     @task
     def normal_behavior_bills(self):
         self.client.get("/api/bills/")
-"""
+
 # Usuario con comportamiento malicioso: más de 100 peticiones por minuto
 class MaliciousUser(HttpUser):
     wait_time = between(0.1, 0.2)  # Mucho más de 100 peticiones por minuto
@@ -22,4 +22,6 @@ class MaliciousUser(HttpUser):
     @task
     def malicious_behavior(self):
         self.client.get("/api/payment_receipts/")
-"""
+
+
+"""final"""
